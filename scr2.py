@@ -12,7 +12,7 @@ count = 1
 
 curr_value = 0
 curr_bg = 'black'
-sequence_list = []
+sequence_list = ["seq 1", "seq 2", "seq 3"]
 curr_sequence = ''
 
 # очистка всех шагов
@@ -29,26 +29,7 @@ def select_seq():
 
 def updSeqList():
     # print(seq_current_btn.current(),'--', seq_current_btn.get())
-    f = open('c:/test.qxw', 'r+')
-    try:
-        file_txt = f.read()
-    finally:
-        f.close()
-    index = 0
-    global sequence_list
-    sequence_list = []
-    while True:
-        index = file_txt.find('Type="Sequence"', index, -1)  # находим Type="Sequence"
-        if index < 0:
-            break
-        index += 16
-        index = file_txt.find('Name="', index, -1)  # находим Name="
-        index += 6
-        index_2 = file_txt.find('"', index, -1)  # "
-        sequence_list.append(file_txt[index:index_2])
-        index = index_2
-    seq_current_btn["values"] = sequence_list
-
+    pass
 # установка текущих значений
 def set_1():
     global curr_value
